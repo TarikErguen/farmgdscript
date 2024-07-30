@@ -172,7 +172,7 @@ window.FarmGod.Library = (function () {
     let page = (url.match('am_farm') || url.match('scavenge_mass')) ? 0 : -1;
     let wrapFn = async function (page, $html) {
       let dnp = determineNextPage(page, $html);
-        await delay(250);
+        await delay(500);
       if (dnp) {
         processorFn($html);
         return processPage(url, dnp, wrapFn);
