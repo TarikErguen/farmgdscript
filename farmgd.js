@@ -158,9 +158,9 @@ window.FarmGod.Library = (function () {
     return false;
   };
 
-  const processPage = function (url, page, wrapFn) {
+  const processPage = async function (url, page, wrapFn) {
     let pageText = (url.match('am_farm')) ? `&Farm_page=${page}` : `&page=${page}`;
-
+ await delay(1000);
     return twLib.ajax({
       url: url + pageText
     }).then((html) => {
